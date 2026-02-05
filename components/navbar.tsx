@@ -37,17 +37,32 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
-          <Link href="#home" className="flex items-center gap-2">
-            <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">S</span>
-            </div>
-            <div className="hidden sm:block">
-              <span className="font-serif font-bold text-lg text-foreground">Safer Home</span>
-              <span className="block text-xs text-muted-foreground -mt-1">Therapy Ltd</span>
-            </div>
-          </Link>
+<nav className="container mx-auto px-4 lg:px-8">
+  <div className="flex items-center justify-between h-16 lg:h-20">
+    <Link href="#home" className="flex items-center gap-2 group">
+      {/* Circle Logo Container */}
+      <div className="w-10 h-10 rounded-full border border-border overflow-hidden bg-white flex items-center justify-center shrink-0">
+        <img 
+          src="/icon-light-32x32.jpeg" 
+          alt="Safer Home Therapy Logo" 
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            e.currentTarget.style.display = 'none';
+            e.currentTarget.parentElement!.innerHTML = '<span class="text-primary font-bold text-lg">S</span>';
+          }}
+        />
+      </div>
+
+      {/* Brand Text */}
+      <div className="hidden sm:block">
+        <span className="font-serif font-bold text-lg text-foreground group-hover:text-primary transition-colors">
+          Safer Home
+        </span>
+        <span className="block text-xs text-muted-foreground -mt-1">
+          Therapy Ltd
+        </span>
+      </div>
+    </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
