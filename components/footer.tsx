@@ -16,16 +16,30 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-foreground text-background py-16">
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-lg">S</span>
-              </div>
-              <div>
+<footer className="bg-foreground text-background py-16">
+  <div className="container mx-auto px-4 lg:px-8">
+    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
+      {/* Brand */}
+      <div className="lg:col-span-2">
+        <div className="flex items-center gap-2 mb-4">
+          {/* Logo Container */}
+          <div className="w-10 h-10 rounded-full overflow-hidden bg-white border border-background/20 flex items-center justify-center shrink-0">
+            <img 
+              src="/icon-light-32x32.png" 
+              alt="Safer Home Therapy Logo" 
+              className="w-full h-full object-cover"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement!.innerHTML = '<span class="text-primary font-bold text-lg">S</span>';
+              }}
+            />
+          </div>
+          {/* Brand Text */}
+          <div>
+            <span className="font-serif font-bold text-lg block">Safer Home Therapy</span>
+            <span className="block text-xs text-background/60 -mt-1">Ltd</span>
+          </div>
+        </div>
                 <span className="font-serif font-bold text-lg">Safer Home Therapy</span>
                 <span className="block text-xs text-background/60 -mt-1">Ltd</span>
               </div>
