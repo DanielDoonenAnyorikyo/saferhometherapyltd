@@ -7,65 +7,55 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    name: "Mrs. Adaeze O.",
-    location: "Lagos",
-    text: "The progress my son has made in just 6 months is incredible. The therapists are patient and truly understand his needs.",
+    name: "Ibemere Felix",
+    location: "",
+    text: "Client centred with optimal result. Tested and trusted.",
     rating: 5,
   },
   {
-    name: "Mr. Chukwudi E.",
-    location: "Abuja",
-    text: "Having therapy at home has been a game-changer for our daughter. She's more comfortable and engaged during sessions.",
+    name: "Denen Dorothy",
+    location: "",
+    text: "Safer Home is indeed a safe place for your special kid.",
     rating: 5,
   },
   {
-    name: "Mrs. Fatima B.",
-    location: "Lagos",
-    text: "Professional, compassionate, and effective. Safer Home Therapy has given us hope and our child the support she needs.",
+    name: "Oranu Bola",
+    location: "",
+    text: "My child communication and behaviour have improved greatly thanks so much.",
     rating: 5,
   },
   {
-    name: "Dr. Olumide A.",
-    location: "Ibadan",
-    text: "As a pediatrician, I confidently refer families to Safer Home Therapy. Their evidence-based approach delivers results.",
+    name: "Jerome Ogwu",
+    location: "",
+    text: "One of the best therapy centre for special needs therapy.",
     rating: 5,
   },
   {
-    name: "Mrs. Ngozi U.",
-    location: "Port Harcourt",
-    text: "The parental coaching has empowered us to better support our child's development every day. Truly transformative.",
+    name: "Mimidoo Anagbe",
+    location: "",
+    text: "Safer Home Therapy is truly God-sent. At first, I couldn't believe the transformation someone I referred experienced. Thank you, Raymond for coming through for us.
+",
+    rating: 4,
+  },
+  {
+    name: "Jude Tov",
+    location: "",
+    text: "Safer Home Therapy is indeed a company that I can recommend to someone, they are actually doing a great job when it comes to working with people with special needs. I gladly gave you people my 5 stars.",
     rating: 5,
   },
   {
-    name: "Mr. & Mrs. Ibrahim",
-    location: "Abuja",
-    text: "Our twins both receive therapy, and the personalized approach for each child shows real understanding of their unique needs.",
+    name: "Uzoamaka Nwoye",
+    location: "",
+    text: "Top notch services delivery. Safer Home Therapy, your trusted brand. I highly recommend.",
     rating: 5,
   },
   {
-    name: "Mrs. Blessing N.",
-    location: "Lagos",
-    text: "The speech therapy has helped our son find his voice. We're so grateful for this dedicated team.",
-    rating: 5,
+    name: "Grace Otokpa",
+    location: "",
+    text: "We noticed positive changes in our child within a short time. His speech improved and he's more confident and well behaved. As a parent I'm very satisfied with the progress.",
+    rating: 4,
   },
-  {
-    name: "Chief & Mrs. Okafor",
-    location: "Enugu",
-    text: "Exceptional service and genuine care. They treat our grandchild like family while maintaining professionalism.",
-    rating: 5,
-  },
-  {
-    name: "Mrs. Aisha M.",
-    location: "Kano",
-    text: "The occupational therapy has improved our daughter's independence remarkably. Daily tasks are no longer a struggle.",
-    rating: 5,
-  },
-  {
-    name: "Mr. Emeka C.",
-    location: "Lagos",
-    text: "Consistency and dedication define this team. Our son looks forward to every session now.",
-    rating: 5,
-  },
+  
 ]
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
