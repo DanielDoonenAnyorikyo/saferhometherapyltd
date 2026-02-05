@@ -25,7 +25,7 @@ export function Footer() {
     {/* Logo Container */}
     <div className="w-10 h-10 rounded-full overflow-hidden bg-white border border-background/20 flex items-center justify-center shrink-0">
       <img 
-        src="/icon-light-32x32.png"
+        src="/public/icon-light-32x32.png"
         alt="Safer Home Therapy Logo" 
         className="w-full h-full object-cover"
         onError={(e) => {
