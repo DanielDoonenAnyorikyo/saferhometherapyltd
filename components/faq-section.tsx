@@ -6,45 +6,37 @@ import { useRef, useState } from "react"
 import { ChevronDown } from "lucide-react"
 
 const faqs = [
-  {
-    question: "What conditions do you provide therapy for?",
-    answer: "We specialize in providing therapy for children with Autism Spectrum Disorder (ASD), Down Syndrome, Cerebral Palsy, ADHD, developmental delays, speech and language disorders, sensory processing challenges, and other special needs.",
-  },
-  {
+   {
     question: "How does home-based therapy work?",
-    answer: "Our qualified therapists visit your home at scheduled times to provide therapy sessions. This allows children to learn and develop in their familiar environment, which often leads to better engagement and faster progress.",
+    answer: "At Safer Home Therapy LTD, we provide high-quality, individualized therapy services in the comfort of your home. Our qualified therapists conduct detailed assessments, develop customized treatment plans, and deliver one-on-one sessions in a familiar environment. This approach enhances focus, comfort, and faster progress, especially in speech and communication development.",
   },
   {
     question: "What age groups do you work with?",
-    answer: "We work with children from infancy through adolescence (0-18 years). Early intervention is particularly beneficial, but we can help children at any stage of their development journey.",
-  },
-  {
-    question: "How long are therapy sessions?",
-    answer: "Sessions typically last 45-60 minutes, depending on the child's age, attention span, and specific therapeutic needs. We customize session length to maximize effectiveness for each child.",
+    answer: "We provide therapy services for both children and adults. Our programs support toddlers, preschoolers, school-age children, teenagers, and adults who experience speech, language, learning, developmental, or physical challenges.",
   },
   {
     question: "How often should my child receive therapy?",
-    answer: "The frequency depends on your child's individual needs and goals. Most children benefit from 2-3 sessions per week, but we'll work with you to create a schedule that fits your family and optimizes outcomes.",
+    answer: "Therapy frequency is determined based on individual needs and professional assessment. Most clients receive therapy one to three times per week, while others may require more or fewer sessions depending on their goals and progress.",
   },
   {
     question: "Are your therapists qualified?",
-    answer: "Yes, all our therapists are licensed professionals with specialized training and certifications in their respective fields. They undergo continuous professional development to stay current with best practices.",
+    answer: "Yes. Our therapists are professionally trained, certified, and experienced in speech therapy, occupational therapy, behavioral intervention, and special needs education. We maintain high ethical and professional standards to ensure quality service delivery.",
   },
   {
     question: "How do you create treatment plans?",
-    answer: "We begin with a comprehensive assessment of your child's strengths, challenges, and goals. Based on this, we develop an individualized treatment plan that we regularly review and adjust as your child progresses.",
+    answer: "We begin with a comprehensive evaluation of communication, cognitive, motor, and functional abilities. Based on our findings, we develop a personalized treatment plan with clearly defined goals, evidence-based strategies, and continuous progress monitoring.",
   },
   {
     question: "Can parents be involved in therapy sessions?",
-    answer: "Absolutely! We encourage parental involvement and provide coaching to help you support your child's development between sessions. Parent participation is often key to achieving the best outcomes.",
+    answer: "Yes. We strongly encourage the active involvement of parents, caregivers, and family members. We provide guidance, training, and practical home-based strategies to help reinforce therapy goals and promote long-term progress.",
   },
   {
     question: "What areas in Nigeria do you cover?",
-    answer: "We currently provide services all across the country. Please contact us to confirm availability in your specific location.",
+    answer: "We currently offer home-based therapy services within Abuja and its surrounding communities. Services in other locations may be arranged upon request, subject to availability.",
   },
   {
     question: "How do I get started with your services?",
-    answer: "Simply fill out the contact form on our website or call us directly. We'll schedule an initial consultation to discuss your child's needs and explain our services in detail.",
+    answer: "Getting started with Safer Home Therapy LTD is simple: Contact us via phone call or WhatsApp. Schedule an initial consultation and assessment. Receive a personalized therapy and intervention plan. Begin structured home-based therapy sessions.",
   },
 ]
 
