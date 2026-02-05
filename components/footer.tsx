@@ -45,7 +45,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-background/70 max-w-sm mb-4 leading-relaxed">
-              Helping every child reach their full potential through personalized home-based therapy services in Nigeria.
+              Therapy and consulting services for children with special needs.
             </p>
             <p className="text-sm text-background/50">RC: 8208650</p>
           </div>
