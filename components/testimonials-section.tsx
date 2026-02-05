@@ -33,9 +33,8 @@ const testimonials = [
   {
     name: "Mimidoo Anagbe",
     location: "",
-    text: "Safer Home Therapy is truly God-sent. At first, I couldn't believe the transformation someone I referred experienced. Thank you, Raymond for coming through for us.
-",
-    rating: 4,
+    text: "Safer Home Therapy is truly God-sent. At first, I couldn't believe the transformation someone I referred experienced. Thank you, Raymond for coming through for us.",
+    rating: 5,
   },
   {
     name: "Jude Tov",
@@ -53,23 +52,22 @@ const testimonials = [
     name: "Grace Otokpa",
     location: "",
     text: "We noticed positive changes in our child within a short time. His speech improved and he's more confident and well behaved. As a parent I'm very satisfied with the progress.",
-    rating: 4,
+    rating: 5,
   },
-  
 ]
 
 function TestimonialCard({ testimonial }: { testimonial: typeof testimonials[0] }) {
   return (
-    <div className="flex-shrink-0 w-80 bg-card rounded-2xl p-6 border border-border mx-3">
+    <div className="flex-shrink-0 w-80 bg-card rounded-2xl p-6 border border-border mx-3 shadow-sm">
       <div className="flex gap-1 mb-4">
         {Array.from({ length: testimonial.rating }).map((_, i) => (
           <Star key={`star-${testimonial.name}-${i}`} className="w-4 h-4 fill-primary text-primary" />
         ))}
       </div>
-      <p className="text-foreground mb-4 leading-relaxed">&ldquo;{testimonial.text}&rdquo;</p>
-      <div>
+      <p className="text-foreground mb-4 leading-relaxed italic">&ldquo;{testimonial.text}&rdquo;</p>
+      <div className="mt-auto">
         <p className="font-semibold text-foreground">{testimonial.name}</p>
-        <p className="text-sm text-muted-foreground">{testimonial.location}</p>
+        {testimonial.location && <p className="text-sm text-muted-foreground">{testimonial.location}</p>}
       </div>
     </div>
   )
@@ -80,7 +78,7 @@ export function TestimonialsSection() {
   const isInView = useInView(ref, { once: true, margin: "-100px" })
 
   return (
-    <section id="testimonials" className="relative py-24 lg:py-32 bg-secondary overflow-hidden">
+    <section id="testimonials" className="relative py-24 lg:py-32 bg-secondary/30 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8">
         <motion.div
           ref={ref}
@@ -103,28 +101,29 @@ export function TestimonialsSection() {
 
       {/* Infinite Marquee */}
       <div className="relative">
-        <div className="flex overflow-hidden">
+        <div className="flex overflow-hidden group">
           <motion.div
             className="flex"
-            animate={{ x: [0, -2640] }}
+            animate={{ x: ["0%", "-50%"] }} // Improved loop math
             transition={{
               x: {
                 repeat: Number.POSITIVE_INFINITY,
                 repeatType: "loop",
-                duration: 40,
+                duration: 35, // Adjusted speed
                 ease: "linear",
               },
             }}
           >
+            {/* We double the list to create the infinite effect */}
             {[...testimonials, ...testimonials].map((testimonial, index) => (
               <TestimonialCard key={`${testimonial.name}-${index}`} testimonial={testimonial} />
             ))}
           </motion.div>
         </div>
 
-        {/* Gradient Overlays */}
-        <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-secondary to-transparent pointer-events-none" />
-        <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-secondary to-transparent pointer-events-none" />
+        {/* Gradient Overlays for smoother look */}
+        <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
+        <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   )
