@@ -7,26 +7,17 @@ import './globals.css'
 const dmSans = DM_Sans({ subsets: ["latin"], variable: '--font-dm-sans' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
-export const metadata: Metadata = {
-  title: 'Safer Home Therapy Ltd | Home-Based Therapy for Children',
-  description: 'Helping every child reach their full potential through personalized home-based therapy. Specialized services for ASD, Down Syndrome, and developmental needs in Nigeria.',
-  generator: 'v0.app',
+export const metadata = {
+  title: "Safer Home Therapy",
+  description: "Professional Pediatric Therapy Services",
   icons: {
     icon: [
       {
-        url: '/icon-light-32x32.jpeg',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-light-32x32.jpeg',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon-light-32x32.jpeg',
-        type: 'image/svg+xml',
+        // This creates a circle mask around your square jpeg
+        url: `data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><foreignObject x='0' y='0' width='100' height='100'><div xmlns='http://www.w3.org/1999/xhtml' style='width:100%;height:100%;background:url(/icon-light-32x32.jpeg) center/cover;border-radius:50%;'/></foreignObject></svg>`,
+        type: "image/svg+xml",
       },
     ],
-    apple: '/icon-light-32x32.jpeg',
   },
 }
 
