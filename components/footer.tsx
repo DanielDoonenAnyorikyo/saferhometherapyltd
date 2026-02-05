@@ -75,21 +75,25 @@ export function Footer() {
           </div>
         </div>
 
-        {/* Bottom Bar */}
+       {/* Bottom Bar */}
         <div className="pt-8 border-t border-background/10">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-background/60 flex items-center gap-1">
-              Copyright © {currentYear} SAFER HOME THERAPY LTD. Designed and Developed by
-              <a 
-                href="https://neot-ech.netlify.app/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="font-semibold hover:text-primary"
-                style={{ textDecoration: 'none', color: 'inherit' }}
-              >
-                Neo-Tech
-              </a>
-            </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div className="text-sm text-background/60 text-center md:text-left">
+              <p>Copyright © {currentYear} SAFER HOME THERAPY LTD.</p>
+              <p className="mt-1">
+                Designed and Developed by{" "}
+                <a 
+                  href="https://neot-ech.netlify.app/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="font-semibold hover:text-primary transition-colors"
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                >
+                  Neo-Tech
+                </a>
+              </p>
+            </div>
+            
             <div className="flex gap-6">
               <Link href="#" className="text-sm text-background/60 hover:text-primary transition-colors">
                 Privacy Policy
