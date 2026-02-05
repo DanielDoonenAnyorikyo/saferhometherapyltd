@@ -43,7 +43,7 @@ export function Navbar() {
       {/* Circle Logo Container */}
       <div className="w-10 h-10 rounded-full border border-border overflow-hidden bg-white flex items-center justify-center shrink-0">
         <img 
-          src="/icon-light-32x32.jpeg" 
+          src="/icon-light-32x32.png" 
           alt="Safer Home Therapy Logo" 
           className="w-full h-full object-cover"
           onError={(e) => {
