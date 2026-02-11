@@ -176,7 +176,7 @@ Request: ${formData.request}`
                       <p className="font-medium text-foreground">Location</p>
                       {/* We use a div here instead of a p to avoid the nesting error */}
                       <div className="text-muted-foreground text-sm space-y-2">
-                      <p><strong>HQ:</strong> Plot 122 Hassan Sam Street, CBN Estate, Abuja, Nigeria</p>
+                      <p><strong>HQ:</strong> Plot 122 Hassan Sani Street, CBN Estate, Abuja, Nigeria.</p>
                        <p><strong>Branch:</strong> Opposite National Open University, Makurdi, Benue State, Nigeria.</p>
                     </div>
                   </div>
