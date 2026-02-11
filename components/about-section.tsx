@@ -61,7 +61,7 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed">
               <p>
-                At Safer Home Therapy Ltd, we provide specialized home-based therapeutic interventions for children with Autism Spectrum Disorder (ASD), Down Syndrome, Cerebral Palsy, and other developmental needs.
+                At Safer Home Therapy Ltd, we provide specialized home-based therapeutic interventions for children with Speech & Language difficulties, Autism Spectrum Disorder (ASD), Down Syndrome, Cerebral Palsy, and other developmental needs.
               </p>
               <p>
                 Our team of experienced therapists brings professional care directly to your home, creating a comfortable and familiar environment where children can thrive. We believe that every child deserves the opportunity to reach their full potential.
