@@ -7,41 +7,66 @@ import './globals.css'
 const dmSans = DM_Sans({ subsets: ["latin"], variable: '--font-dm-sans' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
-export const metadata: Metadata = {
-  title: 'Safer Home Therapy Ltd | Home-Based Therapy for Children',
-  description: 'Helping every child reach their full potential through personalized home-based therapy. Specialized services for ASD, Down Syndrome, and developmental needs in Nigeria.',
-  generator: 'v0.app',
-  icons: {
-    icon: [
+export const metadata = {
+  title: "Safer Home Therapy | Professional Pediatric Therapy in Nigeria",
+  description: "Expert Speech Therapy, Occupational Therapy, and Behavioral Modification for children with special needs. Trusted home-based therapy services in Nigeria.",
+  keywords: [
+    "Pediatric Therapy Nigeria",
+    "Speech Therapy for children",
+    "Occupational Therapy Nigeria",
+    "Behavioral Modification",
+    "Special Needs Education",
+    "Autism support Nigeria",
+    "Safer Home Therapy",
+    "Health",
+    "Children care",
+    "Hospital",
+  ],
+  authors: [{ name: "Safer Home Therapy Ltd" }],
+  metadataBase: new URL("https://saferhome.netlify.app"), // Replace with your custom domain later
+  
+  // Google / Search Engine Tags
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+
+  // Open Graph (WhatsApp, Facebook, LinkedIn)
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://saferhome.netlify.app",
+    title: "Safer Home Therapy - Empowering Children with Special Needs",
+    description: "Professional home-based therapy and consulting services for children. Specialized in Speech and Occupational therapy.",
+    siteName: "Safer Home Therapy",
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon-light-32x32.png',
-        type: 'image/svg+xml',
+        url: "/icon-light-32x32.png", // This shows your logo when you share the link
+        width: 800,
+        height: 600,
+        alt: "Safer Home Therapy Logo",
       },
     ],
-    apple: '/icon-light-32x32.png',
   },
-}
 
+  // Twitter Tags
+  twitter: {
+    card: "summary_large_image",
+    title: "Safer Home Therapy | Pediatric Services",
+    description: "Expert therapy services for children with special needs.",
+    images: ["/icon-light-32x32.png"],
+  },
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode
-}>) {
-  return (
-    <html lang="en">
-      <body className={`${dmSans.variable} ${playfair.variable} font-sans antialiased`}>
-        {children}
-        <Analytics />
-      </body>
-    </html>
-  )
+  // Favicon/Icons
+  icons: {
+    icon: "/icon-light-32x32.png",
+    apple: "/icon-light-32x32.png",
+  },
 }
