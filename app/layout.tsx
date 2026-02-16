@@ -1,13 +1,13 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 
 const dmSans = DM_Sans({ subsets: ["latin"], variable: '--font-dm-sans' });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: '--font-playfair' });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Safer Home Therapy | Professional Pediatric Therapy in Nigeria",
   description: "Expert Speech Therapy, Occupational Therapy, and Behavioral Modification for children with special needs. Trusted home-based therapy services in Nigeria.",
   keywords: [
@@ -23,9 +23,8 @@ export const metadata = {
     "Hospital",
   ],
   authors: [{ name: "Safer Home Therapy Ltd" }],
-  metadataBase: new URL("https://saferhome.netlify.app"), // Replace with your custom domain later
+  metadataBase: new URL("https://saferhometherapyltd.com"), 
   
-  // Google / Search Engine Tags
   robots: {
     index: true,
     follow: true,
@@ -38,17 +37,16 @@ export const metadata = {
     },
   },
 
-  // Open Graph (WhatsApp, Facebook, LinkedIn)
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://saferhome.netlify.app",
+    url: "https://saferhometherapyltd.com",
     title: "Safer Home Therapy - Empowering Children with Special Needs",
     description: "Professional home-based therapy and consulting services for children. Specialized in Speech and Occupational therapy.",
     siteName: "Safer Home Therapy",
     images: [
       {
-        url: "/icon-light-32x32.png", // This shows your logo when you share the link
+        url: "/icon-light-32x32.png",
         width: 800,
         height: 600,
         alt: "Safer Home Therapy Logo",
@@ -56,7 +54,6 @@ export const metadata = {
     ],
   },
 
-  // Twitter Tags
   twitter: {
     card: "summary_large_image",
     title: "Safer Home Therapy | Pediatric Services",
@@ -64,9 +61,23 @@ export const metadata = {
     images: ["/icon-light-32x32.png"],
   },
 
-  // Favicon/Icons
   icons: {
     icon: "/icon-light-32x32.png",
     apple: "/icon-light-32x32.png",
   },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
+      <body>
+        {children}
+        <Analytics />
+      </body>
+    </html>
+  )
 }
