@@ -27,14 +27,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {children}
         <Analytics />
         
-        {/* CORRECTED VOICEFLOW SCRIPT */}
+        {/* FINAL VERIFIED CODE - PROJECT ID 0a2 */}
         <Script id="voiceflow-widget" strategy="lazyOnload">
           {`
             (function(d, t) {
                 var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
                 v.onload = function() {
                   window.voiceflow.chat.load({
-                    verify: { projectID: '69a7eb2e7e59042952d660a3' },
+                    verify: { projectID: '69a7eb2e7e59042952d660a2' },
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production'
                   });
