@@ -44,6 +44,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             }, ['MESSAGE.RECEIVED']);
           `}
         </Script>
+  <Script id="kill-voiceflow" strategy="afterInteractive">
+  {`
+    const observer = new MutationObserver(() => {
+      const vf = document.getElementById('voiceflow-chat') || document.querySelector('.vf-widget');
+      if (vf) {
+        vf.remove();
+        console.log('Voiceflow removed, Botpress taking over.');
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  `}
+</Script>
       </body>
     </html>
   )
