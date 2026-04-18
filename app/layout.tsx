@@ -1,4 +1,4 @@
-// Deploying Botpress v3 - April 2026
+// Botpress Deployment - April 2026
 import React from "react"
 import type { Metadata } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
@@ -20,47 +20,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
 
-        {/* 1. THE ASSASSIN: Blocks Voiceflow before it can even start */}
-        <Script id="block-voiceflow-now" strategy="beforeInteractive">
-          {`
-            (function() {
-              const observer = new MutationObserver((mutations) => {
-                mutations.forEach((mutation) => {
-                  mutation.addedNodes.forEach((node) => {
-                    if (node.tagName === 'SCRIPT' && node.src && node.src.includes('voiceflow')) {
-                      node.remove();
-                    }
-                    if (node.id === 'voiceflow-chat' || (node.className && typeof node.className === 'string' && node.className.includes('vf-'))) {
-                      node.style.display = 'none';
-                      node.remove();
-                    }
-                  });
-                });
-              });
-              observer.observe(document.documentElement, { childList: true, subtree: true });
-            })();
-          `}
-        </Script>
-
-        {/* 2. BOTPRESS CORE */}
+        {/* 1. BOTPRESS WEBCHAT SCRIPT */}
         <Script 
           src="https://cdn.botpress.cloud/webchat/v3.6/inject.js" 
           strategy="afterInteractive" 
         />
         
-        {/* 3. BOTPRESS CONFIG */}
+        {/* 2. YOUR SPECIFIC BOT CONFIGURATION */}
         <Script 
           src="https://files.bpcontent.cloud/2026/04/17/15/20260417155516-TKCGHR4F.js" 
           strategy="afterInteractive"
         />
 
-        {/* 4. TTS LOGIC */}
+        {/* 3. TEXT-TO-SPEECH (TTS) LOGIC */}
         <Script id="botpress-tts" strategy="afterInteractive">
           {`
             window.botpressWebChat.onEvent(function(event) {
               if (event.type === 'MESSAGE.RECEIVED') {
-                const utterance = new SpeechSynthesisUtterance(event.value.text);
-                window.speechSynthesis.speak(utterance);
+                if (event.value && event.value.text) {
+                  const utterance = new SpeechSynthesisUtterance(event.value.text);
+                  window.speechSynthesis.speak(utterance);
+                }
               }
             }, ['MESSAGE.RECEIVED']);
           `}
