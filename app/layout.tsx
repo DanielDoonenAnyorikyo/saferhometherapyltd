@@ -1,4 +1,4 @@
-// Botpress Deployment - April 2026
+// Final Botpress Fix - April 2026
 import React from "react"
 import type { Metadata } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
@@ -17,34 +17,27 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
+      <head>
+        {/* Adjusted CSP to be more permissive for Botpress specifically */}
+        <meta 
+          httpEquiv="Content-Security-Policy" 
+          content="script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.botpress.cloud https://files.bpcontent.cloud; frame-src 'self' https://webchat.botpress.cloud; connect-src 'self' https://*.botpress.cloud https://*.bpcontent.cloud https://cdn.botpress.cloud;"
+        />
+      </head>
       <body>
         {children}
 
-        {/* 1. BOTPRESS WEBCHAT SCRIPT */}
+        {/* BOTPRESS SCRIPT 1: The Loader */}
         <Script 
           src="https://cdn.botpress.cloud/webchat/v3.6/inject.js" 
           strategy="afterInteractive" 
         />
         
-        {/* 2. YOUR SPECIFIC BOT CONFIGURATION */}
+        {/* BOTPRESS SCRIPT 2: Your Bot Config */}
         <Script 
           src="https://files.bpcontent.cloud/2026/04/17/15/20260417155516-TKCGHR4F.js" 
           strategy="afterInteractive"
         />
-
-        {/* 3. TEXT-TO-SPEECH (TTS) LOGIC */}
-        <Script id="botpress-tts" strategy="afterInteractive">
-          {`
-            window.botpressWebChat.onEvent(function(event) {
-              if (event.type === 'MESSAGE.RECEIVED') {
-                if (event.value && event.value.text) {
-                  const utterance = new SpeechSynthesisUtterance(event.value.text);
-                  window.speechSynthesis.speak(utterance);
-                }
-              }
-            }, ['MESSAGE.RECEIVED']);
-          `}
-        </Script>
       </body>
     </html>
   )
