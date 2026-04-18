@@ -1,7 +1,6 @@
 import React from "react"
 import type { Metadata } from 'next'
 import { DM_Sans, Playfair_Display } from 'next/font/google'
-import { Analytics } from '@vercelanalytics/react'
 import Script from 'next/script'
 import './globals.css'
 
@@ -19,7 +18,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${dmSans.variable} ${playfair.variable}`}>
       <body>
         {children}
-        <Analytics />
         
         {/* 1. Botpress Core Library */}
         <Script 
@@ -39,7 +37,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             window.botpressWebChat.onEvent(function(event) {
               if (event.type === 'MESSAGE.RECEIVED') {
                 const utterance = new SpeechSynthesisUtterance(event.value.text);
-                // Optional: Set a friendly tone
                 utterance.pitch = 1;
                 utterance.rate = 1;
                 window.speechSynthesis.speak(utterance);
