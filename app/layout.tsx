@@ -1,3 +1,29 @@
+{/* Aggressive Voiceflow Blocker */}
+<Script id="block-voiceflow-now" strategy="beforeInteractive">
+  {`
+    (function() {
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          mutation.addedNodes.forEach((node) => {
+            if (node.tagName === 'SCRIPT' && node.src && node.src.includes('voiceflow')) {
+              node.remove();
+            }
+            if (node.id === 'voiceflow-chat' || node.className?.includes?.('vf-')) {
+              node.style.display = 'none';
+              node.remove();
+            }
+          });
+        });
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+    })();
+  `}
+</Script>
+
+{/* Your new Botpress Scripts */}
+<Script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js" strategy="afterInteractive" />
+<Script src="https://files.bpcontent.cloud/2026/04/17/15/20260417155516-TKCGHR4F.js" strategy="afterInteractive" />
+  
 // Deploying Botpress v3 - April 2026
 import React from "react"
 import type { Metadata } from 'next'
